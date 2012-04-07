@@ -10,4 +10,4 @@ You can jump to the error from the quickfix window.
 
 # Install
 
-Please read the doc/vim-quickrun-phpunit.txt
+Please follow the doc/vim-quickrun-phpunit.txt
