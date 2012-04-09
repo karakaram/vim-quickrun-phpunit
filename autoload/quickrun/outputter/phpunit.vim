@@ -56,7 +56,7 @@ function! s:outputter.finish(session)
   endif
 endfunction
 
-function! quickrun#outputter#qhpunit#new()
+function! quickrun#outputter#phpunit#new()
   return deepcopy(s:outputter)
 endfunction
 
