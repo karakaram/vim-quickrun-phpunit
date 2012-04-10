@@ -10,7 +10,8 @@ set cpo&vim
 let s:outputter = {
 \   'config': {
 \     'running_mark': ':-)',
-\     'height': '10',
+\     'height': 10,
+\     'auto_open': 1,
 \   }
 \ }
 
@@ -49,7 +50,9 @@ function! s:outputter.finish(session)
     endif
     
     lgetexpr data
-    execute 'botright lwindow ' self.config.height
+    if self.config.auto_open == 1
+      execute 'botright lwindow ' self.config.height
+    endif
     execute 'set errorformat=' . error_format
     redraw!
     echohl phpUnitFailures | echo error_message | echohl None
