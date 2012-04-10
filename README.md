@@ -2,7 +2,7 @@
 
 vim-quickrun-phpunit is outputter of vim-quickrun plugin.
 
-You can output to the command line the result of running the PHPUnit. 
+You can output to the command line the result of running the PHPUnit.  
 Result message will be green and red coloring.
 
 If PHPUnit test case is failure, result message is output to the location-list.  
