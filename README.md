@@ -35,5 +35,5 @@ Please install vim-quickrun Version 0.5.1(or later) before use this plugin.
 ## Option settings
 
     let g:quickrun_config['phpunit']['outputter/phpunit/running_mark'] = 'running...'
-    let g:quickrun_config['phpunit']['outputter/phpunit/height'] = '3'
+    let g:quickrun_config['phpunit']['outputter/phpunit/height'] = 3
     let g:quickrun_config['phpunit']['outputter/phpunit/auto_open'] = 0
