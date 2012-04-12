@@ -17,11 +17,11 @@ let s:outputter = {
 
 function! s:outputter.init(session)
   let self._result = ''
-  echo self.config.running_mark
 endfunction
 
 function! s:outputter.output(data, session)
   let self._result .= a:data
+  echo self.config.running_mark
 endfunction
 
 function! s:outputter.finish(session)
@@ -47,6 +47,8 @@ function! s:outputter.finish(session)
     elseif stridx(data, 'FAILURES!') > 0
       let error_message = substitute(data, '.*\nFAILURES!\n\(.*\)\n', 'FAILURES! \1', '')
       set errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%-G%.%#
+    else
+      let error_message = 'SOMETHING WRONG! CHECK PHPUNIT SETTINGS.'
     endif
     
     lgetexpr data
