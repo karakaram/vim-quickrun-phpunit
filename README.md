@@ -31,6 +31,10 @@ Please install vim-quickrun Version 0.5.1(or later) before use this plugin.
     
     let g:quickrun_config['phpunit'] = {}
     let g:quickrun_config['phpunit']['outputter'] = 'phpunit'
+       
+    let g:quickrun_config['phpunit']['command'] = 'phpunit'
+    let g:quickrun_config['phpunit']['cmdopt'] = ''
+    let g:quickrun_config['phpunit']['exec'] = '%c %o %s'
 
 ## Option settings
 
