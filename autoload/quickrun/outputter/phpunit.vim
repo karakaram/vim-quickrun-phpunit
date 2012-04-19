@@ -36,17 +36,15 @@ function! s:outputter.finish(session)
     let error_message = ''
     highlight phpUnitFailures term=reverse ctermbg=4 guibg=DarkRed
 
-    if stridx(data, 'error:') > 0
-      let error_message = 'ERROR!'
-      set errorformat=%m\ in\ %f\ on\ line\ %l
-      let data = substitute(data, '^\n', '', '')
-    elseif stridx(data, 'Warning:') > 0
-      let error_message = 'WARNING!'
-      set errorformat=%m\ in\ %f\ on\ line\ %l
-      let data = substitute(data, '^\n', '', '')
-    elseif stridx(data, 'FAILURES!') > 0
+    if stridx(data, 'FAILURES!') > 0
       let error_message = substitute(data, '.*\nFAILURES!\n\(.*\)\n', 'FAILURES! \1', '')
       set errorformat=%E%n)\ %.%#,%Z%f:%l,%C%m,%-G%.%#
+    elseif stridx(data, 'error:') > 0
+      let error_message = 'ERROR!'
+      set errorformat=%m\ in\ %f\ on\ line\ %l,%-G%.%#
+    elseif stridx(data, 'Warning:') > 0
+      let error_message = 'WARNING!'
+      set errorformat=%m\ in\ %f\ on\ line\ %l,%-G%.%#
     else
       let error_message = 'SOMETHING WRONG! CHECK PHPUNIT SETTINGS.'
     endif
